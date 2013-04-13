@@ -27,5 +27,4 @@ public class SimpleHealthPlayerListener implements Listener {
 			}
 		}
 	}
-
 }

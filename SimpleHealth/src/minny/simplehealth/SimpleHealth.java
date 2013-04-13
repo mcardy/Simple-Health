@@ -6,22 +6,23 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.ScoreboardManager;
 
 public class SimpleHealth extends JavaPlugin {
 
 	private final SimpleHealthPlayerListener playerListener = new SimpleHealthPlayerListener(
 			this);
-	ScoreboardManager manager = Bukkit.getScoreboardManager();
-	Scoreboard board = manager.getNewScoreboard();
+	
 
+	Scoreboard board;
+	
 	@Override
 	public void onDisable() {
 	}
 
 	@Override
 	public void onEnable() {
-
+		board = getScoreboard(board);
+		
 		board.registerNewObjective("showhealth", "health");
 
 		Objective objective = board.getObjective("showhealth");
@@ -32,6 +33,11 @@ public class SimpleHealth extends JavaPlugin {
 
 		pm.registerEvents(playerListener, this);
 
+	}
+	
+	public Scoreboard getScoreboard(Scoreboard board){
+		return
+		board = Bukkit.getScoreboardManager().getNewScoreboard();
 	}
 
 }
