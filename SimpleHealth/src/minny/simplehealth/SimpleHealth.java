@@ -16,7 +16,7 @@ public class SimpleHealth extends JavaPlugin implements Listener{
 		board.registerNewObjective("showhealth", "health");
 		Objective objective = board.getObjective("showhealth");
 		objective.setDisplaySlot(DisplaySlot.BELOW_NAME);
-		objective.setDisplayName("/ 20");
+		objective.setDisplayName(" ♥");
 		getServer().getPluginManager().registerEvents(this, this);
 	}
 	@EventHandler
